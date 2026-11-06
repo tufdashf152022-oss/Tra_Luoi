@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>RECRUITMENT - Trà Lười</title>
+<link rel="stylesheet" href="../css/nav.css">
+<link rel="stylesheet" href="../css/recruitment.css">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+</head>
+
+<body>
+     <header>
+        <a href="index.html">
+        <img src="../img/ChatGPT Image 22_34_17 5 thg 7, 2026.png">
+    </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME PAGE</a></li>
+                <li><a href="aboutus.html">ABOUT US</a></li>
+                <li><a href="nuocluoi.html">MENU</a></li>
+                <li><a href="newap.html" > NEW & PROMOTION</a> </li>
+                <li><a href="store.html"> STORE</a> </li>
+                <li><a href="recuitment.html" > RECRUITMENT</a>  </li>
+                <li><a href="contact.html" >CONTACT</a>   </li>
+                <li><a href="faq.html">FAQ</a>    </li>
+            </ul>
+        </nav>
+        <div class="acc">
+
+            <!-- Tài khoản -->
+            <div class="account">
+                <div class="user-icon">
+               <i class="bi bi-person-fill"></i>
+                </div>
+        
+                <div class="account-text">
+                    <span>Tài khoản</span>
+                     <small><a href="dangnhap.html" >Đăng nhập</a> </small>
+                </div>
+            </div>
+        
+            <!-- Giỏ hàng -->
+            <div class="cart">
+
+   <a href="giohang.html">
+    <i class="bi bi-cart3"></i>
+</a>
+
+    <span>Giỏ hàng</span>
+
+    <div class="count">0</div>
+
+</div>
+        
+        
+        </div>
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="recruitment-page">
+
+        <section class="recruitment-container">
+
+            <!-- KHU VỰC TUYỂN DỤNG -->
+
+            <div class="filter-top">
+
+                <select id="locationFilter">
+
+                    <option value="all">
+                        Khu Vực Tuyển Dụng
+                    </option>
+
+                    <option value="ho-chi-minh">
+                        Hồ Chí Minh
+                    </option>
+
+                    <option value="ha-noi">
+                        Hà Nội
+                    </option>
+
+                    <option value="ha-nam">
+                        Hà Nam
+                    </option>
+
+                    <option value="thanh-hoa">
+                        Thanh Hóa
+                    </option>
+
+                    <option value="nam-dinh">
+                        Nam Định
+                    </option>
+
+                    <option value="hai-duong">
+                        Hải Dương
+                    </option>
+
+                    <option value="long-an">
+                        Long An
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- BỘ LỌC -->
+
+            <div class="filter-row">
+
+                <button class="filter-btn active"
+                        data-category="all">
+                    Tất Cả Việc Làm
+                </button>
+
+                <button class="filter-btn"
+                        data-category="store">
+                    Việc Làm Khối Cửa Hàng
+                </button>
+
+                <button class="filter-btn"
+                        data-category="supply">
+                    Việc Làm Khối Chuỗi Cung Ứng
+                </button>
+
+                <button class="filter-btn"
+                        data-category="office">
+                    Việc Làm Khối Văn Phòng
+                </button>
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Tìm Kiếm Công Việc">
+
+                    <i class="bi bi-search"></i>
+
+                </div>
+
+            </div>
+
+
+            <!-- SỐ LƯỢNG -->
+
+            <div class="job-count">
+                Số lượng:
+                <span id="jobCount">12</span>
+            </div>
+
+
+            <!-- DANH SÁCH CÔNG VIỆC -->
+
+            <section class="jobs-grid" id="jobsGrid">
+
+
+                <!-- JOB 1 -->
+
+                <article class="job-card"
+                         data-location="ha-noi"
+                         data-category="store">
+
+                    <h2>
+                        [HÀ NỘI] NHÂN VIÊN FULLTIME
+                    </h2>
+
+                    <div class="job-info">
+
+                        <span>
+                            <i class="bi bi-geo-alt"></i>
+                            Hà Nội
+                        </span>
+
+                        <span>
+                            <i class="bi bi-calendar"></i>
+                            14/08/2026
+                        </span>
+
+                        <span class="dot">•</span>
+
+                        <span>
+                            Toàn thời gian
+                        </span>
+
+                    </div>
+
+                    <div class="job-bottom">
+
+                        <p>
+                            Hạn nộp:
+                            <strong>31/12/2026</strong>
+                        </p>
+
+                        <button class="apply-btn">
+                            Ứng Tuyển
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- JOB 2 -->
+
+                <article class="job-card"
+                         data-location="long-an"
+                         data-category="store">
+
+                    <h2>
+                        [Cần Giuộc] - Trưởng Nhóm Sản Xuất
+                    </h2>
+
+                    <div class="job-info">
+
+                        <span>
+                            <i class="bi bi-geo-alt"></i>
+                            Long An
+                        </span>
+
+                        <span>
+                            <i class="bi bi-calendar"></i>
+                            01/08/2026
+                        </span>
+
+                        <span class="dot">•</span>
+
+                        <span>
+                            Toàn thời gian
+                        </span>
+
+                    </div>
+
+                    <div class="job-bottom">
+
+                        <p>
+                            Hạn nộp:
+                            <strong>30/09/2026</strong>
+                        </p>
+
+                        <button class="apply-btn">
+                            Ứng Tuyển
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- JOB 3 -->
+
+                <article class="job-card"
+                         data-location="ho-chi-minh"
+                         data-category="office">
+
+                    <h2>
+                        [HCM] - R&D Intern
+                    </h2>
+
+                    <div class="job-info">
+
+                        <span>
+                            <i class="bi bi-geo-alt"></i>
+                            Hồ Chí Minh
+                        </span>
+
+                        <span>
+                            <i class="bi bi-calendar"></i>
+                            11/08/2026
+                        </span>
+
+                        <span class="dot">•</span>
+
+                        <span>
+                            Toàn thời gian
+                        </span>
+
+                    </div>
+
+                    <div class="job-bottom">
+
+                        <p>
+                            Hạn nộp:
+                            <strong>10/09/2026</strong>
+                        </p>
+
+                        <button class="apply-btn">
+                            Ứng Tuyển
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- JOB 4 -->
+
+                <article class="job-card"
+                         data-location="ho-chi-minh"
+                         data-category="supply">
+
+                    <h2>
+                        Category Procurement Officer (Capex, MRO) - For Store
+                    </h2>
+
+                    <div class="job-info">
+
+                        <span>
+                            <i class="bi bi-geo-alt"></i>
+                            Hồ Chí Minh
+                        </span>
+
+                        <span>
+                            <i class="bi bi-calendar"></i>
+                            10/08/2026
+                        </span>
+
+                        <span class="dot">•</span>
+
+                        <span>
+                            Toàn thời gian
+                        </span>
+
+                    </div>
+
+                    <div class="job-bottom">
+
+                        <p>
+                            Hạn nộp:
+                            <strong>09/09/2026</strong>
+                        </p>
+
+                        <button class="apply-btn">
+                            Ứng Tuyển
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- JOB 5 -->
+
+                <article class="job-card"
+                         data-location="ho-chi-minh"
+                         data-category="office">
+
+                    <h2>
+                        [HCM] Compensation & Benefits Specialist (C&B)
+                    </h2>
+
+                    <div class="job-info">
+
+                        <span>
+                            <i class="bi bi-geo-alt"></i>
+                            Hồ Chí Minh
+                        </span>
+
+                        <span>
+                            <i class="bi bi-calendar"></i>
+                            04/08/2026
+                        </span>
+
+                        <span class="dot">•</span>
+
+                        <span>
+                            Toàn thời gian
+                        </span>
+
+                    </div>
+
+                    <div class="job-bottom">
+
+                        <p>
+                            Hạn nộp:
+                            <strong>31/12/2026</strong>
+                        </p>
+
+                        <button class="apply-btn">
+                            Ứng Tuyển
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- JOB 6 -->
+
+                <article class="job-card"
+                         data-location="ha-nam"
+                         data-category="store">
+
+                    <h2>
+                        [HÀ NAM] GIÁM SÁT CỬA HÀNG
+                    </h2>
+
+                    <div class="job-info">
+
+                        <span>
+                            <i class="bi bi-geo-alt"></i>
+                            Hà Nam
+                        </span>
+
+                        <span>
+                            <i class="bi bi-calendar"></i>
+                            01/08/2026
+                        </span>
+
+                        <span class="dot">•</span>
+
+                        <span>
+                            Toàn thời gian
+                        </span>
+
+                    </div>
+
+                    <div class="job-bottom">
+
+                        <p>
+                            Hạn nộp:
+                            <strong>31/08/2026</strong>
+                        </p>
+
+                        <button class="apply-btn">
+                            Ứng Tuyển
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- JOB 7 -->
+
+                <article class="job-card"
+                         data-location="ha-nam"
+                         data-category="store">
+
+                    <h2>
+                        [HÀ NAM] TỔ TRƯỞNG CỬA HÀNG
+                    </h2>
+
+                    <div class="job-info">
+
+                        <span>
+                            <i class="bi bi-geo-alt"></i>
+                            Hà Nam
+                        </span>
+
+                        <span>
+                            <i class="bi bi-calendar"></i>
+                            01/08/2026
+                        </span>
+
+                        <span class="dot">•</span>
+
+                        <span>
+                            Toàn thời gian
+                        </span>
+
+                    </div>
+
+                    <div class="job-bottom">
+
+                        <p>
+                            Hạn nộp:
+                            <strong>31/08/2026</strong>
+                        </p>
+
+                        <button class="apply-btn">
+                            Ứng Tuyển
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- JOB 8 -->
+
+                <article class="job-card"
+                         data-location="thanh-hoa"
+                         data-category="store">
+
+                    <h2>
+                        [THANH HÓA] TỔ TRƯỞNG CỬA HÀNG
+                    </h2>
+
+                    <div class="job-info">
+
+                        <span>
+                            <i class="bi bi-geo-alt"></i>
+                            Thanh Hóa
+                        </span>
+
+                        <span>
+                            <i class="bi bi-calendar"></i>
+                            01/08/2026
+                        </span>
+
+                        <span class="dot">•</span>
+
+                        <span>
+                            Toàn thời gian
+                        </span>
+
+                    </div>
+
+                    <div class="job-bottom">
+
+                        <p>
+                            Hạn nộp:
+                            <strong>31/08/2026</strong>
+                        </p>
+
+                        <button class="apply-btn">
+                            Ứng Tuyển
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- JOB 9 -->
+
+                <article class="job-card"
+                         data-location="nam-dinh"
+                         data-category="store">
+
+                    <h2>
+                        [NAM ĐỊNH] GIÁM SÁT CỬA HÀNG
+                    </h2>
+
+                    <div class="job-info">
+
+                        <span>
+                            <i class="bi bi-geo-alt"></i>
+                            Nam Định
+                        </span>
+
+                        <span>
+                            <i class="bi bi-calendar"></i>
+                            01/08/2026
+                        </span>
+
+                        <span class="dot">•</span>
+
+                        <span>
+                            Toàn thời gian
+                        </span>
+
+                    </div>
+
+                    <div class="job-bottom">
+
+                        <p>
+                            Hạn nộp:
+                            <strong>31/08/2026</strong>
+                        </p>
+
+                        <button class="apply-btn">
+                            Ứng Tuyển
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- JOB 10 -->
+
+                <article class="job-card"
+                         data-location="hai-duong"
+                         data-category="store">
+
+                    <h2>
+                        [HẢI DƯƠNG] TỔ TRƯỞNG CỬA HÀNG
+                    </h2>
+
+                    <div class="job-info">
+
+                        <span>
+                            <i class="bi bi-geo-alt"></i>
+                            Hải Dương
+                        </span>
+
+                        <span>
+                            <i class="bi bi-calendar"></i>
+                            01/08/2026
+                        </span>
+
+                        <span class="dot">•</span>
+
+                        <span>
+                            Toàn thời gian
+                        </span>
+
+                    </div>
+
+                    <div class="job-bottom">
+
+                        <p>
+                            Hạn nộp:
+                            <strong>31/08/2026</strong>
+                        </p>
+
+                        <button class="apply-btn">
+                            Ứng Tuyển
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- JOB 11 -->
+
+                <article class="job-card"
+                         data-location="long-an"
+                         data-category="supply">
+
+                    <h2>
+                        [Long Hậu] - Trợ Lý Kho
+                    </h2>
+
+                    <div class="job-info">
+
+                        <span>
+                            <i class="bi bi-geo-alt"></i>
+                            Long An
+                        </span>
+
+                        <span>
+                            <i class="bi bi-calendar"></i>
+                            01/08/2026
+                        </span>
+
+                        <span class="dot">•</span>
+
+                        <span>
+                            Toàn thời gian
+                        </span>
+
+                    </div>
+
+                    <div class="job-bottom">
+
+                        <p>
+                            Hạn nộp:
+                            <strong>30/09/2026</strong>
+                        </p>
+
+                        <button class="apply-btn">
+                            Ứng Tuyển
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- JOB 12 -->
+
+                <article class="job-card"
+                         data-location="long-an"
+                         data-category="office">
+
+                    <h2>
+                        [Long An] HRBP Intern
+                    </h2>
+
+                    <div class="job-info">
+
+                        <span>
+                            <i class="bi bi-geo-alt"></i>
+                            Long An
+                        </span>
+
+                        <span>
+                            <i class="bi bi-calendar"></i>
+                            01/08/2026
+                        </span>
+
+                        <span class="dot">•</span>
+
+                        <span>
+                            Toàn thời gian
+                        </span>
+
+                    </div>
+
+                    <div class="job-bottom">
+
+                        <p>
+                            Hạn nộp:
+                            <strong>30/09/2026</strong>
+                        </p>
+
+                        <button class="apply-btn">
+                            Ứng Tuyển
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+     <footer>
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h3>TRÀ LƯỜI</h3>
+            <p>Thức uống tươi ngon mỗi ngày.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Liên hệ</h3>
+            <p>📍 TP. Hồ Chí Minh</p>
+            <p>📞 0123 456 789</p>
+            <p>✉ traluoi@gmail.com</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Theo dõi</h3>
+            <p>Facebook</p>
+            <p>Instagram</p>
+            <p>TikTok</p>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+        © 2026 Trà Lười. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="../js/recruitment.js"></script>
+
+</body>
+</html>

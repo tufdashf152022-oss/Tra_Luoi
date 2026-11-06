@@ -1,0 +1,266 @@
+/* ========================================
+   SIGNUP PAGE - TRÀ LƯỜI
+======================================== */
+
+
+/* ========================================
+   MAIN
+======================================== */
+
+main {
+    background: #F8F3E8;
+    min-height: 800px;
+    padding: 60px 0 80px;
+}
+
+
+/* ========================================
+   KHUNG ĐĂNG KÝ
+======================================== */
+
+.signup {
+    width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px 50px;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   TIÊU ĐỀ
+======================================== */
+
+.signup h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #222;
+    margin: 0 0 10px;
+}
+
+
+/* ========================================
+   ĐÃ CÓ TÀI KHOẢN
+======================================== */
+
+.signup .register-text {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 17px;
+    color: #555;
+}
+
+.signup .register-text a {
+    color: #c62828;
+    text-decoration: none;
+}
+
+.signup .register-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   LABEL
+======================================== */
+
+.signup form > label {
+    display: block;
+    font-weight: bold;
+    margin: 18px 0 8px;
+    font-size: 17px;
+    color: #333;
+}
+
+
+/* Dấu sao bắt buộc */
+
+.signup form > label > span {
+    color: red;
+}
+
+
+/* ========================================
+   Ô INPUT
+======================================== */
+
+.signup form > input {
+    width: 100%;
+    height: 48px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    outline: none;
+    background: white;
+}
+
+
+/* Khi click vào input */
+
+.signup form > input:focus {
+    border: 2px solid #8D6E63;
+}
+
+
+/* Placeholder */
+
+.signup form > input::placeholder {
+    color: #999;
+}
+
+
+/* ========================================
+   CHECKBOX + ĐIỀU KHOẢN
+======================================== */
+
+.signup-agree {
+    margin: 25px 0;
+}
+
+
+/* Label của checkbox */
+
+.signup .agree-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+
+/* Checkbox */
+
+.signup .agree-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 2px 0 0;
+    padding: 0;
+    flex-shrink: 0;
+    accent-color: #c62828;
+}
+
+
+/* Nội dung điều khoản */
+
+.signup .agree-text {
+    color: #555 !important;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   NÚT ĐĂNG KÝ
+======================================== */
+
+.signup form button {
+    width: 100%;
+    height: 55px;
+
+    background: #ddd2c3;
+    color: #c62828;
+
+    border: none;
+    border-radius: 30px;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* Hover */
+
+.signup form button:hover {
+    background: #cdbda9;
+    color: #a51f1f;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    background: #5B3A29;
+    color: white;
+    padding: 20px 80px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.footer-box {
+    flex: 1;
+}
+
+.footer-box h3 {
+    margin-bottom: 20px;
+}
+
+.footer-box p {
+    line-height: 1.8;
+}
+
+footer hr {
+    margin: 30px 0;
+    border: 1px solid #8D6E63;
+}
+
+.copyright {
+    text-align: center;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .signup {
+        width: 90%;
+        padding: 30px 25px;
+    }
+
+    .signup h1 {
+        font-size: 28px;
+    }
+
+    .signup .register-text {
+        font-size: 15px;
+    }
+
+    .signup form > label {
+        font-size: 16px;
+    }
+
+    .signup form > input {
+        height: 45px;
+        font-size: 15px;
+    }
+
+    .signup form button {
+        font-size: 19px;
+    }
+
+    footer {
+        padding: 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

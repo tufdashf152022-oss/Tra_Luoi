@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>CONTACT - Trà Lười</title>
+<link rel="stylesheet" href="../css/aboutus.css">
+<link rel="stylesheet" href="../css/contact.css">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+</head>
+
+<body>
+     <header>
+        <a href="index.html">
+        <img src="../img/ChatGPT Image 22_34_17 5 thg 7, 2026.png">
+    </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME PAGE</a></li>
+                <li><a href="aboutus.html">ABOUT US</a></li>
+                <li><a href="nuocluoi.html">MENU</a></li>
+                <li><a href="newap.html" > NEW & PROMOTION</a> </li>
+                <li><a href="store.html"> STORE</a> </li>
+                <li><a href="recuitment.html" > RECRUITMENT</a>  </li>
+                <li><a href="contact.html" >CONTACT</a>   </li>
+                <li><a href="faq.html">FAQ</a>    </li>
+            </ul>
+        </nav>
+        <div class="acc">
+
+            <!-- Tài khoản -->
+            <div class="account">
+                <div class="user-icon">
+               <i class="bi bi-person-fill"></i>
+                </div>
+        
+                <div class="account-text">
+                    <span>Tài khoản</span>
+                     <small><a href="dangnhap.html" >Đăng nhập</a> </small>
+                </div>
+            </div>
+        
+            <!-- Giỏ hàng -->
+            <div class="cart">
+
+   <a href="giohang.html">
+    <i class="bi bi-cart3"></i>
+</a>
+
+    <span>Giỏ hàng</span>
+
+    <div class="count">0</div>
+
+</div>
+        
+        
+        </div>
+    </header>
+  <main class="contact-page">
+
+    <section class="banner">
+        <div class="banner-img">
+            <img src="../img/Gemini_Generated_Image_inp0bxinp0bxinp0.png">
+        </div>
+    </section>
+
+    <section class="contact-container">
+
+            <!-- GIỚI THIỆU -->
+
+            <div class="contact-intro">
+                <br>
+                <p>
+                    Trà Lười luôn mong muốn nhận được những phản hồi quý báu
+                    từ quý khách hàng để có cơ hội hoàn thiện sản phẩm,
+                    dịch vụ hơn nữa.
+                </p>
+
+                <p>
+                    Những đóng góp của quý khách hàng luôn là tài sản vô giá
+                    đối với chúng tôi.
+                </p>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <form id="contactForm">
+
+                <!-- THÔNG TIN -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="fullName">
+                            Họ và tên
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="">
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Số điện thoại
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="province">
+                            Tỉnh/ Thành
+                        </label>
+
+                        <select id="province" name="province">
+
+                            <option value="">
+                                Chọn tỉnh/thành
+                            </option>
+
+                            <option>
+                                TP. Hồ Chí Minh
+                            </option>
+
+                            <option>
+                                Hà Nội
+                            </option>
+
+                            <option>
+                                Đà Nẵng
+                            </option>
+
+                            <option>
+                                Cần Thơ
+                            </option>
+
+                            <option>
+                                Khác
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group store-group">
+
+                        <label for="store">
+                            Cửa hàng phản hồi
+                        </label>
+
+                        <select id="store" name="store">
+
+                            <option value="">
+                                Chọn cửa hàng
+                            </option>
+
+                            <option>
+                                Trà Lười - Hồ Chí Minh
+                            </option>
+
+                            <option>
+                                Trà Lười - Hà Nội
+                            </option>
+
+                            <option>
+                                Trà Lười - Đà Nẵng
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- VẤN ĐỀ PHẢN HỒI -->
+
+                <div class="feedback-section">
+
+                    <h3>Vấn đề phản hồi</h3>
+
+                    <div class="radio-list">
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="feedbackType"
+                                value="thanphien"
+                                checked>
+                            <span>Than phiền</span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="feedbackType"
+                                value="khenn">
+                            <span>Khen ngợi</span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="feedbackType"
+                                value="desuggest">
+                            <span>Đề xuất</span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="feedbackType"
+                                value="member">
+                            <span>Thẻ thành viên</span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="feedbackType"
+                                value="voucher">
+                            <span>Nhượng quyền</span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="feedbackType"
+                                value="recruitment">
+                            <span>Tuyển dụng</span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="feedbackType"
+                                value="other">
+                            <span>Vấn đề khác</span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NỘI DUNG -->
+
+                <div class="form-group message-group">
+
+                    <label for="message">
+                        Nội dung phản hồi
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="8"></textarea>
+
+                </div>
+
+
+                <!-- THỎA THUẬN -->
+
+                <div class="privacy-section">
+
+                    <h2>THỎA THUẬN BẢO MẬT THÔNG TIN</h2>
+
+                    <ol>
+
+                        <li>
+                            Trà Lười sẽ luôn giữ bí mật các thông tin của
+                            khách hàng và tuân thủ những quy định pháp luật
+                            về bảo mật thông tin có liên quan.
+                        </li>
+
+                        <li>
+                            Trà Lười có thể tiết lộ thông tin cá nhân cho
+                            mục đích giải quyết khiếu nại, than phiền của
+                            khách hàng cho:
+                        </li>
+
+                    </ol>
+
+                    <ul>
+
+                        <li>
+                            Các bộ phận trực thuộc Trà Lười.
+                        </li>
+
+                        <li>
+                            Bên thứ ba được ủy quyền chính thức trong trường
+                            hợp cần thiết.
+                        </li>
+
+                    </ul>
+
+                    <p class="note-title">
+                        * LƯU Ý:
+                    </p>
+
+                    <p>
+                        Quý khách vui lòng cung cấp chính xác các thông tin
+                        cá nhân để Trà Lười có thể liên hệ giải quyết các
+                        thắc mắc, phản hồi và phàn nàn của khách hàng một
+                        cách nhanh chóng nhất.
+                    </p>
+
+                    <p>
+                        Các ngày Thứ bảy, Chủ nhật, ngày lễ sẽ khiến quá
+                        trình giải quyết phản hồi của quý khách chậm hơn
+                        thường lệ.
+                    </p>
+
+                </div>
+
+
+                <!-- XÁC NHẬN -->
+
+                <div class="confirm-section">
+
+                    <label class="confirm-checkbox">
+
+                        <input
+                            type="checkbox"
+                            id="agree"
+                            name="agree">
+
+                        <span>
+                            Tôi xác nhận các thông tin cá nhân cung cấp ở trên
+                            là hoàn toàn chính xác và đồng ý để Trà Lười sử
+                            dụng các thông tin đó cho mục đích giải quyết
+                            phản hồi.
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- CAPTCHA GIẢ LẬP -->
+
+                <div class="form-bottom">
+
+
+                    <button
+                        type="submit"
+                        class="submit-btn">
+
+                        GỬI Ý KIẾN
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+     <footer>
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h3>TRÀ LƯỜI</h3>
+            <p>Thức uống tươi ngon mỗi ngày.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Liên hệ</h3>
+            <p>📍 TP. Hồ Chí Minh</p>
+            <p>📞 0123 456 789</p>
+            <p>✉ traluoi@gmail.com</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Theo dõi</h3>
+            <p>Facebook</p>
+            <p>Instagram</p>
+            <p>TikTok</p>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+        © 2026 Trà Lười. All Rights Reserved.
+    </p>
+
+</footer>
+</body>
+</html>

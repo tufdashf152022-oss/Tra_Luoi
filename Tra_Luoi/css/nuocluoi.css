@@ -1,0 +1,351 @@
+/* =========================
+   HEADER
+========================= */
+
+header {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+header a {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header img {
+    width: 350px;
+    height: auto;
+}
+
+nav {
+    flex: 1;
+}
+
+
+/* =========================
+   TÀI KHOẢN
+========================= */
+
+.account {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-icon {
+    width: 40px;
+    height: 40px;
+
+    border: 2px solid #d94135;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #d94135;
+}
+
+.user-icon i {
+    font-size: 24px;
+}
+
+.account-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.account-text span {
+    font-size: 18px;
+}
+
+.account-text small {
+    font-size: 14px;
+}
+
+
+/* =========================
+   GIỎ HÀNG
+========================= */
+
+.cart {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border: 2px solid #d94135;
+    border-radius: 8px;
+
+    padding: 8px 14px;
+}
+
+.cart i {
+    color: #f5b400;
+    font-size: 24px;
+}
+
+.count {
+    width: 22px;
+    height: 22px;
+
+    background: #ddd2c7;
+    color: #b43b2d;
+
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.acc {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    background: #F8F3E8;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+    width: 1200px;
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    padding: 50px 40px 70px;
+}
+
+
+/* =========================
+   MENU GRID
+========================= */
+
+.menu-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    column-gap: 50px;
+    row-gap: 60px;
+}
+
+
+/* =========================
+   SẢN PHẨM
+========================= */
+
+.item {
+    text-align: center;
+
+    min-width: 0;
+
+    padding: 20px 20px 35px;
+
+    border-bottom: 2px dashed #d8a900;
+}
+
+
+/* =========================
+   ẢNH SẢN PHẨM
+========================= */
+
+.item img {
+    display: block;
+
+    width: 180px;
+    height: 180px;
+
+    object-fit: contain;
+
+    margin: 0 auto 15px;
+}
+
+
+/* =========================
+   TÊN TIẾNG ANH
+========================= */
+
+.item h3 {
+    color: #c62828;
+
+    font-size: 20px;
+
+    font-weight: normal;
+
+    margin: 15px 0 8px;
+
+    min-height: 28px;
+}
+
+
+/* =========================
+   TÊN TIẾNG VIỆT
+========================= */
+
+.item p {
+    font-size: 18px;
+
+    color: #333;
+
+    margin: 0 0 15px;
+
+    min-height: 26px;
+}
+
+.item p a {
+    color: #333;
+
+    text-decoration: none;
+}
+
+.item p a:hover {
+    color: #c62828;
+}
+
+
+/* =========================
+   GIÁ
+========================= */
+
+.price {
+    font-size: 24px;
+
+    color: #5B3A29;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   NÚT MUA NGAY
+========================= */
+
+.buy-btn {
+    display: inline-block;
+
+    background: #8D6E63;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 28px;
+
+    border-radius: 30px;
+
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    background: #5B3A29;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #5B3A29;
+
+    color: white;
+
+    padding: 20px 80px;
+}
+
+.footer-container {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+.footer-box {
+    flex: 1;
+}
+
+.footer-box h3 {
+    margin-bottom: 20px;
+}
+
+.footer-box p {
+    line-height: 1.8;
+}
+
+footer hr {
+    margin: 30px 0;
+
+    border: 1px solid #8D6E63;
+}
+
+.copyright {
+    text-align: center;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media screen and (max-width: 1000px) {
+
+    .menu {
+        width: 100%;
+        padding: 40px 25px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media screen and (max-width: 700px) {
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu {
+        padding: 30px 15px;
+    }
+
+    .item {
+        border-bottom: 2px dashed #d8a900;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    footer {
+        padding: 25px 30px;
+    }
+
+}
