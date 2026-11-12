@@ -14,7 +14,9 @@
         <div class="grid">
             <div class="card">
                 <img src="~/img/image.png">
-                <a href="html/nuocluoi.html"><h3>Đặt Hàng Ngay</h3></a>
+               <h3>
+                   @Html.ActionLink("Đặt Hàng Ngay", "Menu", "Index")
+               </h3>
             </div>
             <div class="card">
                 <img src="~/img/Gemini_Generated_Image_dfnxkadfnxkadfnx.png">
@@ -24,26 +26,28 @@
             </div>
             <div class="card">
                 <img src="~/img/Gemini_Generated_Image_9kwkb59kwkb59kwk.png">
-                <a href="html/aboutus.html"><h3>Về Chúng Tôi</h3></a>
+                <h3>
+                    @Html.ActionLink("Về Chúng Tôi", "AboutUs", "Index")
+                </h3>
             </div>
             <div class="card">
                 <img src="~/img/Gemini_Generated_Image_andigbandigbandi.png">
-                <a href="newap.html">
-                    <h3>Tin Tức</h3>
-                </a>
+                <h3>
+                    @Html.ActionLink("Tin Tức", "NewPromotion", "Index")")
+                </h3>
             </div>
             <div class="card">
                 <img src="~/img/istockphoto-1239766678-612x612.jpg">
-                <a href="contact.html">
-                    <h3>Tương Tác</h3>
-                </a>
+                <h3>
+                    @Html.ActionLink("Tương Tác", "Contact", "Index")
+                </h3>
             </div>
             <div class="card">
 
                 <img src="~/img/Gemini_Generated_Image_68pe1i68pe1i68pe.png">
-                <a href="nuocluoi.html">
-                    <h3>Nước Lười</h3>
-                </a>
+                <h3>
+                    @Html.ActionLink("Cửa Hàng", "Store", "Index")
+                </h3>
             </div>
         </div>
     </section>

@@ -91,10 +91,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="css\aboutus.css" />
     <Content Include="css\contact.css" />
+    <Content Include="css\ctrecruiment.css" />
     <Content Include="css\dieukhoan.css" />
     <Content Include="css\faq.css" />
     <Content Include="css\giohang.css" />
     <Content Include="css\nav.css" />
+    <Content Include="css\new1.css" />
     <Content Include="css\newap.css" />
     <Content Include="css\nuocluoi.css" />
     <Content Include="css\products.css" />
@@ -104,24 +106,42 @@
     <Content Include="css\store.css" />
     <Content Include="Global.asax" />
     <Content Include="html\aboutus.html" />
+    <Content Include="html\c&amp;b.html" />
     <Content Include="html\chitietcafe.html" />
+    <Content Include="html\chitietnew1.html" />
+    <Content Include="html\chitietnew2.html" />
+    <Content Include="html\chitietnew3.html" />
+    <Content Include="html\chitietnew4.html" />
+    <Content Include="html\chitietnew5.html" />
+    <Content Include="html\chitietnew6.html" />
     <Content Include="html\chitietnuocepdau.html" />
     <Content Include="html\chitietnuocepdautam.html" />
     <Content Include="html\chitietsinhtobo.html" />
     <Content Include="html\chitiettrasua.html" />
     <Content Include="html\chitiettravaivixa.html" />
     <Content Include="html\contact.html" />
+    <Content Include="html\cpo-fstore.html" />
     <Content Include="html\dangnhap.html" />
     <Content Include="html\disan.html" />
     <Content Include="html\faq.html" />
     <Content Include="html\giohang.html" />
+    <Content Include="html\gsch1.html" />
+    <Content Include="html\gsch2.html" />
     <Content Include="html\homepage.html" />
+    <Content Include="html\hrbp.html" />
     <Content Include="html\index.html" />
     <Content Include="html\newap.html" />
     <Content Include="html\nuocluoi.html" />
+    <Content Include="html\nvfulltime.html" />
+    <Content Include="html\rdintern.html" />
     <Content Include="html\recuitment.html" />
     <Content Include="html\signup.html" />
     <Content Include="html\store.html" />
+    <Content Include="html\tlk.html" />
+    <Content Include="html\tnsx.html" />
+    <Content Include="html\ttch1.html" />
+    <Content Include="html\ttch2.html" />
+    <Content Include="html\ttch3.html" />
     <Content Include="html\vechungtoi.html" />
     <Content Include="img\ChatGPT Image 22_34_17 5 thg 7, 2026.png" />
     <Content Include="img\Gemini_Generated_Image_3vi3m83vi3m83vi3.png" />
@@ -163,10 +183,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Employees.cs" />
+    <Compile Include="Models\News.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -183,6 +207,10 @@
     <Content Include="Views\Index\Recruiment.cshtml" />
     <Content Include="Views\Index\Contact.cshtml" />
     <Content Include="Views\Index\FAQ.cshtml" />
+    <Content Include="Views\Index\News.cshtml" />
+    <Content Include="Views\News\Details.cshtml" />
+    <Content Include="Views\Index\Employees.cshtml" />
+    <Content Include="Views\Employees\Employees.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -192,7 +220,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

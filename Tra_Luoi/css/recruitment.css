@@ -1,8 +1,32 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.account {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+
+.user-icon {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #d94135;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d94135;
+}
+
+.account-text {
+    display: flex;
+    flex-direction: column;
+}
+
+    .account-text span {
+        font-size: 18px;
+    }
+
+    .account-text small {
+        font-size: 14px;
+    }
 
 body {
     font-family: Arial, Helvetica, sans-serif;

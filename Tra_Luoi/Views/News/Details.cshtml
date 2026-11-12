@@ -1,0 +1,81 @@
+﻿@model Tra_Luoi.Models.News
+
+@{
+    ViewBag.Title = "News";
+    Layout = "~/Views/Shared/Tra_Luoi.cshtml";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="@Url.Content("~/css/new1.css")" />
+}
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+    <a href="#">Trang chủ</a> /
+    <a href="#">Tin tức</a> /
+    Chi tiết tin tức
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="container">
+
+    <!-- CỘT 4: SIDEBAR -->
+    <aside class="sidebar">
+
+        <img src="@Url.Content(Model.HinhAnh)"
+             alt="@Model.TieuDe">
+
+        <h3>@Model.TieuDe</h3>
+
+        <p>
+            @Model.MoTa
+        </p>
+
+        <span class="category">TIN TỨC</span>
+
+        <div class="info">
+            <p><b>Danh mục:</b> Tin tức</p>
+            <p><b>Ngày đăng:</b> @Model.NgayDang</p>
+            <p><b>Thương hiệu:</b> Trà Lười</p>
+        </div>
+
+    </aside>
+
+    <!-- CỘT 8: ARTICLE -->
+    <article class="article">
+
+        <div class="date">
+            TIN TỨC | @Model.NgayDang
+        </div>
+
+        <h1>@Model.TieuDe</h1>
+
+        <p class="intro">
+            @Model.MoTa
+        </p>
+
+        <h2>1. Giới thiệu sản phẩm mới</h2>
+
+        <p>
+            @Model.GioiThieu
+        </p>
+
+        <h2>2. Điểm nổi bật</h2>
+
+        <p>
+            @Model.DiemNoiBat
+        </p>
+
+        <h2>3. Trải nghiệm ngay hôm nay</h2>
+
+        <p>
+            @Model.TraiNghiem
+        </p>
+
+        <a href="@Url.Action("NewPromotion", "Index")" class="back">
+            ← Quay lại trang
+        </a>
+
+    </article>
+
+</main>

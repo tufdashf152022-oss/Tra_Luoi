@@ -1,0 +1,227 @@
+.breadcrumb {
+    padding: 20px 7%;
+    font-size: 14px;
+    color: #777;
+    background: #F8F3E8;
+}
+
+    .breadcrumb a {
+        color: #5B3A29;
+        text-decoration: none;
+    }
+
+
+
+.container {
+    width: 100%;
+    margin: 0;
+    padding: 15px 7% 60px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: 30px;
+    align-items: start;
+    background: #F8F3E8;
+}
+.job-detail {
+    width: 92%;
+    max-width: 1200px;
+    min-height: calc(100vh - 200px);
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #F8F3E8;
+    color: #493326;
+    font-family: Arial, sans-serif;
+}
+
+main.container:has(.job-detail) {
+    width: 100%;
+    max-width: 100%;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #F8F3E8;
+}
+
+    main.container:has(.job-detail) .job-detail {
+        width: 92%;
+        max-width: 1200px;
+        flex: 1;
+        margin: 0 auto;
+        padding: 30px;
+        box-sizing: border-box;
+        background: #F8F3E8;
+        color: #493326;
+        font-family: Arial, sans-serif;
+    }
+
+
+/* BỐ CỤC CHUNG */
+.job-detail-header,
+.job-detail-content,
+.job-detail-footer {
+    box-sizing: border-box;
+}
+
+/* THÔNG TIN CÔNG VIỆC */
+.job-detail-header {
+    background: #FFFFFF;
+    padding: 28px 30px;
+    border: 1px solid #E5D8C8;
+    border-radius: 12px;
+    margin-bottom: 22px;
+}
+
+.job-detail-header h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #493326;
+    margin: 0 0 22px;
+    line-height: 1.4;
+}
+
+.job-detail-header p {
+    font-size: 15px;
+    color: #604936;
+    margin: 12px 0;
+    line-height: 1.6;
+}
+
+/* NỘI DUNG CHI TIẾT */
+.job-detail-content {
+    background: #FFFFFF;
+    padding: 30px;
+    border: 1px solid #E5D8C8;
+    border-radius: 12px;
+    margin-bottom: 22px;
+}
+
+.job-detail-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #5B3828;
+    margin: 28px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #EAE0D3;
+}
+
+.job-detail-content h3:first-child {
+    margin-top: 0;
+}
+
+.job-detail-content ul {
+    padding-left: 22px;
+    margin: 0 0 22px;
+}
+
+.job-detail-content li {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #554438;
+    margin-bottom: 9px;
+    padding-left: 3px;
+}
+
+.job-detail-content p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #554438;
+    margin-bottom: 15px;
+}
+
+/* PHẦN HẠN NỘP VÀ ỨNG TUYỂN */
+.job-detail-footer {
+    background: #FFFFFF;
+    padding: 22px 30px;
+    border: 1px solid #E5D8C8;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.job-detail-footer p {
+    font-size: 15px;
+    color: #493326;
+    margin: 0;
+}
+
+.job-apply-button {
+    display: inline-block;
+    background: #5B3828;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.job-apply-button:hover {
+    background: #805A42;
+    transform: translateY(-2px);
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+    .job-detail {
+        width: 96%;
+        padding: 15px;
+    }
+
+    .job-detail-header,
+    .job-detail-content,
+    .job-detail-footer {
+        padding: 22px;
+    }
+
+    .job-detail-header h2 {
+        font-size: 22px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+    .job-detail {
+        width: 100%;
+        padding: 12px;
+        margin: 15px auto;
+    }
+
+    .job-detail-header,
+    .job-detail-content,
+    .job-detail-footer {
+        padding: 18px;
+    }
+
+    .job-detail-header h2 {
+        font-size: 19px;
+    }
+
+    .job-detail-content h3 {
+        font-size: 17px;
+    }
+
+    .job-detail-content li,
+    .job-detail-content p {
+        font-size: 14px;
+    }
+
+    .job-detail-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .job-apply-button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

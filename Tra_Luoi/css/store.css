@@ -1,57 +1,8 @@
- header{
-                justify-content: space-between;
-                align-items: center;
-                display: flex;
-            }
-             header a{
-                display:block;
-            }
-            nav ul{
-             list-style: none;
-             display: flex;
-             gap: 20px;  
-            }
-            header img {    
-                width: 350px;
-                height:auto;
-            }
-            nav{
-                flex:1;
-            }
+
             
              /* Tài khoản */
             
-             .account{
-                display:flex;
-                align-items:center;
-                gap:10px;
-            }
             
-            .user-icon{
-                width:40px;
-                height:40px;
-                border:2px solid #d94135;
-                border-radius:50%;
-                display:flex;
-                justify-content:center;
-                align-items:center;
-                color:#d94135;
-            }
-            .user-icon i{
-    font-size:24px;
-}
-            .account-text{
-                display:flex;
-                flex-direction:column;
-            }
-            
-            .account-text span{
-                font-size:18px;
-            }
-            
-            .account-text small{
-                font-size:14px;
-            }
             
             /* Giỏ hàng */
             

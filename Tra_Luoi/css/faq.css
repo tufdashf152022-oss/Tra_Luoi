@@ -210,30 +210,3 @@
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 768px) {
-
-    .faq-container {
-        width: 90%;
-    }
-
-    .faq-page .banner-img {
-        height: 250px;
-    }
-
-    .faq-search {
-        width: 100%;
-    }
-
-    .faq-search button {
-        width: 110px;
-    }
-
-    .faq-question {
-        font-size: 14px;
-    }
-
-}

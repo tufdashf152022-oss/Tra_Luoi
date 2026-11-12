@@ -41,5 +41,13 @@ namespace Tra_Luoi.Controllers
         {
             return View();
         }
+        public ActionResult News()
+        {
+            return View();
+        }
+        public ActionResult Employees()
+        {
+            return View();
+        }
     }
 }
