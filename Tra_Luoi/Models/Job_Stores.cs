@@ -12,12 +12,14 @@ namespace Tra_Luoi.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class Job_Stores
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int Job_Store_ID { get; set; }
+        public Nullable<int> Job_ID { get; set; }
+        public int Store_ID { get; set; }
+        public int Headcount { get; set; }
+    
+        public virtual Job Job { get; set; }
+        public virtual Store Store { get; set; }
     }
 }

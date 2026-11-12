@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0996ebd588d2485a9b29f96831195ed1" Name="Diagram1">
+        <EntityTypeShape EntityType="Models.Category" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Discount" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Order" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.OrderDetail" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.OrderDetail_Topping" Width="1.5" PointX="7.5" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Product" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Topping" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <AssociationConnector Association="Models.FK__Product__CatID__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK__Order__DiscountI__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK__OrderDeta__Order__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK__OrderDeta__Order__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK__OrderDeta__Produ__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK__OrderDeta__Toppi__5441852A" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Models.Application" Width="1.5" PointX="12.625" PointY="7.625" />
+        <EntityTypeShape EntityType="Models.Candidate" Width="1.5" PointX="10.375" PointY="10.875" />
+        <EntityTypeShape EntityType="Models.Job_Stores" Width="1.5" PointX="9.625" PointY="8" />
+        <EntityTypeShape EntityType="Models.Job" Width="1.5" PointX="10.375" PointY="3.5" />
+        <EntityTypeShape EntityType="Models.Store" Width="1.5" PointX="7.375" PointY="7.25" />
+        <AssociationConnector Association="Models.FK__Applicati__Candi__7E37BEF6" />
+        <AssociationConnector Association="Models.FK__Applicati__Job_I__7D439ABD" />
+        <AssociationConnector Association="Models.FK__Applicati__Prefe__7F2BE32F" />
+        <AssociationConnector Association="Models.FK__Job_Store__Job_I__76969D2E" />
+        <AssociationConnector Association="Models.FK__Job_Store__Store__75A278F5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

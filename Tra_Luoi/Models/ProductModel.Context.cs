@@ -13,10 +13,10 @@ namespace Tra_Luoi.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Tra_LuoiDbContext : DbContext
+    public partial class Tra_LuoiDBContext : DbContext
     {
-        public Tra_LuoiDbContext()
-            : base("name=Tra_LuoiDbContext")
+        public Tra_LuoiDBContext()
+            : base("name=Tra_LuoiDBContext")
         {
         }
     
@@ -31,7 +31,11 @@ namespace Tra_Luoi.Models
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<OrderDetail_Topping> OrderDetail_Topping { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Topping> Toppings { get; set; }
+        public virtual DbSet<Application> Applications { get; set; }
+        public virtual DbSet<Candidate> Candidates { get; set; }
+        public virtual DbSet<Job_Stores> Job_Stores { get; set; }
+        public virtual DbSet<Job> Jobs { get; set; }
+        public virtual DbSet<Store> Stores { get; set; }
     }
 }

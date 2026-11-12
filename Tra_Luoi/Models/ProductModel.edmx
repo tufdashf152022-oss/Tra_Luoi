@@ -4,7 +4,32 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ModelTra_Luoi.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Applications">
+          <Key>
+            <PropertyRef Name="Application_ID" />
+          </Key>
+          <Property Name="Application_ID" Type="int" Nullable="false" />
+          <Property Name="Job_ID" Type="int" Nullable="false" />
+          <Property Name="Candidates_ID" Type="int" />
+          <Property Name="Preferred_Store_ID" Type="int" />
+          <Property Name="Status" Type="varchar" MaxLength="30" />
+          <Property Name="Hr_Note" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Applied_At" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Candidates">
+          <Key>
+            <PropertyRef Name="Candidates_ID" />
+          </Key>
+          <Property Name="Candidates_ID" Type="int" Nullable="false" />
+          <Property Name="Full_Name" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Date_Of_Birth" Type="date" Nullable="false" />
+          <Property Name="Cv_File_Url" Type="varchar" MaxLength="1000" />
+          <Property Name="Preferred_Shifts" Type="nvarchar" MaxLength="100" />
+          <Property Name="Created_at" Type="datetime" />
+        </EntityType>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="CatID" />
@@ -24,6 +49,32 @@
           <Property Name="StartDate" Type="date" Nullable="false" />
           <Property Name="EndDate" Type="date" Nullable="false" />
           <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Job_Stores">
+          <Key>
+            <PropertyRef Name="Job_Store_ID" />
+          </Key>
+          <Property Name="Job_Store_ID" Type="int" Nullable="false" />
+          <Property Name="Job_ID" Type="int" />
+          <Property Name="Store_ID" Type="int" Nullable="false" />
+          <Property Name="Headcount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Jobs">
+          <Key>
+            <PropertyRef Name="Job_id" />
+          </Key>
+          <Property Name="Job_id" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Employment_Type" Type="varchar" MaxLength="70" />
+          <Property Name="Salary_min" Type="money" Nullable="false" />
+          <Property Name="Salary_max" Type="money" Nullable="false" />
+          <Property Name="Salary_Unit" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Requirements" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Benefits" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Created_At" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -81,15 +132,21 @@
           <Property Name="IsAvailable" Type="bit" />
           <Property Name="IsActive" Type="bit" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
+        <EntityType Name="Store">
           <Key>
-            <PropertyRef Name="diagram_id" />
+            <PropertyRef Name="Store_ID" />
           </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
+          <Property Name="Store_ID" Type="int" Nullable="false" />
+          <Property Name="Store_Code" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Store_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Location_Type" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="District" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Hotline" Type="nvarchar" MaxLength="70" />
+          <Property Name="Opening_Hours" Type="time" Precision="0" />
+          <Property Name="Closed_Hours" Type="time" Precision="0" />
+          <Property Name="Store_Images_Url" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="Topping">
           <Key>
@@ -100,6 +157,66 @@
           <Property Name="Price" Type="money" Nullable="false" />
           <Property Name="IsAvailable" Type="bit" />
         </EntityType>
+        <Association Name="FK__Applicati__Candi__7E37BEF6">
+          <End Role="Candidates" Type="Self.Candidates" Multiplicity="0..1" />
+          <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Candidates">
+              <PropertyRef Name="Candidates_ID" />
+            </Principal>
+            <Dependent Role="Applications">
+              <PropertyRef Name="Candidates_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Applicati__Job_I__7D439ABD">
+          <End Role="Jobs" Type="Self.Jobs" Multiplicity="1" />
+          <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jobs">
+              <PropertyRef Name="Job_id" />
+            </Principal>
+            <Dependent Role="Applications">
+              <PropertyRef Name="Job_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Applicati__Prefe__7F2BE32F">
+          <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+          <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="Store_ID" />
+            </Principal>
+            <Dependent Role="Applications">
+              <PropertyRef Name="Preferred_Store_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Job_Store__Job_I__76969D2E">
+          <End Role="Jobs" Type="Self.Jobs" Multiplicity="0..1" />
+          <End Role="Job_Stores" Type="Self.Job_Stores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jobs">
+              <PropertyRef Name="Job_id" />
+            </Principal>
+            <Dependent Role="Job_Stores">
+              <PropertyRef Name="Job_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Job_Store__Store__75A278F5">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="Job_Stores" Type="Self.Job_Stores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="Store_ID" />
+            </Principal>
+            <Dependent Role="Job_Stores">
+              <PropertyRef Name="Store_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Order__DiscountI__4222D4EF">
           <End Role="Discount" Type="Self.Discount" Multiplicity="0..1" />
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
@@ -172,15 +289,39 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ModelTra_LuoiStoreContainer">
+        <EntityContainer Name="ModelsStoreContainer">
+          <EntitySet Name="Applications" EntityType="Self.Applications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Candidates" EntityType="Self.Candidates" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Discount" EntityType="Self.Discount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Job_Stores" EntityType="Self.Job_Stores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderDetail_Topping" EntityType="Self.OrderDetail_Topping" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Topping" EntityType="Self.Topping" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Applicati__Candi__7E37BEF6" Association="Self.FK__Applicati__Candi__7E37BEF6">
+            <End Role="Candidates" EntitySet="Candidates" />
+            <End Role="Applications" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Applicati__Job_I__7D439ABD" Association="Self.FK__Applicati__Job_I__7D439ABD">
+            <End Role="Jobs" EntitySet="Jobs" />
+            <End Role="Applications" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Applicati__Prefe__7F2BE32F" Association="Self.FK__Applicati__Prefe__7F2BE32F">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Applications" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Job_Store__Job_I__76969D2E" Association="Self.FK__Job_Store__Job_I__76969D2E">
+            <End Role="Jobs" EntitySet="Jobs" />
+            <End Role="Job_Stores" EntitySet="Job_Stores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Job_Store__Store__75A278F5" Association="Self.FK__Job_Store__Store__75A278F5">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Job_Stores" EntitySet="Job_Stores" />
+          </AssociationSet>
           <AssociationSet Name="FK__Order__DiscountI__4222D4EF" Association="Self.FK__Order__DiscountI__4222D4EF">
             <End Role="Discount" EntitySet="Discount" />
             <End Role="Order" EntitySet="Order" />
@@ -206,11 +347,10 @@
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ModelTra_Luoi" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="CatID" />
@@ -298,16 +438,6 @@
           <NavigationProperty Name="Category" Relationship="Self.FK__Product__CatID__46E78A0C" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__Produ__4D94879B" FromRole="Product" ToRole="OrderDetail" />
         </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="Topping">
           <Key>
             <PropertyRef Name="ToppingID" />
@@ -390,14 +520,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Tra_LuoiDbContext" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Tra_LuoiDBContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="Discounts" EntityType="Self.Discount" />
           <EntitySet Name="Orders" EntityType="Self.Order" />
           <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
           <EntitySet Name="OrderDetail_Topping" EntityType="Self.OrderDetail_Topping" />
           <EntitySet Name="Products" EntityType="Self.Product" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Toppings" EntityType="Self.Topping" />
           <AssociationSet Name="FK__Product__CatID__46E78A0C" Association="Self.FK__Product__CatID__46E78A0C">
             <End Role="Category" EntitySet="Categories" />
@@ -423,15 +552,177 @@
             <End Role="Topping" EntitySet="Toppings" />
             <End Role="OrderDetail_Topping" EntitySet="OrderDetail_Topping" />
           </AssociationSet>
+          <EntitySet Name="Applications" EntityType="Models.Application" />
+          <EntitySet Name="Candidates" EntityType="Models.Candidate" />
+          <EntitySet Name="Job_Stores" EntityType="Models.Job_Stores" />
+          <EntitySet Name="Jobs" EntityType="Models.Job" />
+          <EntitySet Name="Stores" EntityType="Models.Store" />
+          <AssociationSet Name="FK__Applicati__Candi__7E37BEF6" Association="Models.FK__Applicati__Candi__7E37BEF6">
+            <End Role="Candidate" EntitySet="Candidates" />
+            <End Role="Application" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Applicati__Job_I__7D439ABD" Association="Models.FK__Applicati__Job_I__7D439ABD">
+            <End Role="Job" EntitySet="Jobs" />
+            <End Role="Application" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Applicati__Prefe__7F2BE32F" Association="Models.FK__Applicati__Prefe__7F2BE32F">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Application" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Job_Store__Job_I__76969D2E" Association="Models.FK__Job_Store__Job_I__76969D2E">
+            <End Role="Job" EntitySet="Jobs" />
+            <End Role="Job_Stores" EntitySet="Job_Stores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Job_Store__Store__75A278F5" Association="Models.FK__Job_Store__Store__75A278F5">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Job_Stores" EntitySet="Job_Stores" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="Application_ID" />
+          </Key>
+          <Property Name="Application_ID" Type="Int32" Nullable="false" />
+          <Property Name="Job_ID" Type="Int32" Nullable="false" />
+          <Property Name="Candidates_ID" Type="Int32" />
+          <Property Name="Preferred_Store_ID" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Hr_Note" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Applied_At" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Candidate" Relationship="Models.FK__Applicati__Candi__7E37BEF6" FromRole="Application" ToRole="Candidate" />
+          <NavigationProperty Name="Job" Relationship="Models.FK__Applicati__Job_I__7D439ABD" FromRole="Application" ToRole="Job" />
+          <NavigationProperty Name="Store" Relationship="Models.FK__Applicati__Prefe__7F2BE32F" FromRole="Application" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Candidate">
+          <Key>
+            <PropertyRef Name="Candidates_ID" />
+          </Key>
+          <Property Name="Candidates_ID" Type="Int32" Nullable="false" />
+          <Property Name="Full_Name" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Of_Birth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Cv_File_Url" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Preferred_Shifts" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Created_at" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Applications" Relationship="Models.FK__Applicati__Candi__7E37BEF6" FromRole="Candidate" ToRole="Application" />
+        </EntityType>
+        <EntityType Name="Job_Stores">
+          <Key>
+            <PropertyRef Name="Job_Store_ID" />
+          </Key>
+          <Property Name="Job_Store_ID" Type="Int32" Nullable="false" />
+          <Property Name="Job_ID" Type="Int32" />
+          <Property Name="Store_ID" Type="Int32" Nullable="false" />
+          <Property Name="Headcount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Job" Relationship="Models.FK__Job_Store__Job_I__76969D2E" FromRole="Job_Stores" ToRole="Job" />
+          <NavigationProperty Name="Store" Relationship="Models.FK__Job_Store__Store__75A278F5" FromRole="Job_Stores" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="Job_id" />
+          </Key>
+          <Property Name="Job_id" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Employment_Type" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Salary_min" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Salary_max" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Salary_Unit" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Requirements" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Benefits" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Created_At" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Applications" Relationship="Models.FK__Applicati__Job_I__7D439ABD" FromRole="Job" ToRole="Application" />
+          <NavigationProperty Name="Job_Stores" Relationship="Models.FK__Job_Store__Job_I__76969D2E" FromRole="Job" ToRole="Job_Stores" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="Store_ID" />
+          </Key>
+          <Property Name="Store_ID" Type="Int32" Nullable="false" />
+          <Property Name="Store_Code" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Store_Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Location_Type" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="District" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Hotline" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="Opening_Hours" Type="Time" Precision="0" />
+          <Property Name="Closed_Hours" Type="Time" Precision="0" />
+          <Property Name="Store_Images_Url" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Applications" Relationship="Models.FK__Applicati__Prefe__7F2BE32F" FromRole="Store" ToRole="Application" />
+          <NavigationProperty Name="Job_Stores" Relationship="Models.FK__Job_Store__Store__75A278F5" FromRole="Store" ToRole="Job_Stores" />
+        </EntityType>
+        <Association Name="FK__Applicati__Candi__7E37BEF6">
+          <End Type="Models.Candidate" Role="Candidate" Multiplicity="0..1" />
+          <End Type="Models.Application" Role="Application" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Candidate">
+              <PropertyRef Name="Candidates_ID" />
+            </Principal>
+            <Dependent Role="Application">
+              <PropertyRef Name="Candidates_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Applicati__Job_I__7D439ABD">
+          <End Type="Models.Job" Role="Job" Multiplicity="1" />
+          <End Type="Models.Application" Role="Application" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="Job_id" />
+            </Principal>
+            <Dependent Role="Application">
+              <PropertyRef Name="Job_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Applicati__Prefe__7F2BE32F">
+          <End Type="Models.Store" Role="Store" Multiplicity="0..1" />
+          <End Type="Models.Application" Role="Application" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="Store_ID" />
+            </Principal>
+            <Dependent Role="Application">
+              <PropertyRef Name="Preferred_Store_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Job_Store__Job_I__76969D2E">
+          <End Type="Models.Job" Role="Job" Multiplicity="0..1" />
+          <End Type="Models.Job_Stores" Role="Job_Stores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="Job_id" />
+            </Principal>
+            <Dependent Role="Job_Stores">
+              <PropertyRef Name="Job_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Job_Store__Store__75A278F5">
+          <End Type="Models.Store" Role="Store" Multiplicity="1" />
+          <End Type="Models.Job_Stores" Role="Job_Stores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="Store_ID" />
+            </Principal>
+            <Dependent Role="Job_Stores">
+              <PropertyRef Name="Store_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelTra_LuoiStoreContainer" CdmEntityContainer="Tra_LuoiDbContext">
+        <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="Tra_LuoiDBContext">
           <EntitySetMapping Name="Categories">
-            <EntityTypeMapping TypeName="ModelTra_Luoi.Category">
+            <EntityTypeMapping TypeName="Models.Category">
               <MappingFragment StoreEntitySet="Category">
                 <ScalarProperty Name="CatID" ColumnName="CatID" />
                 <ScalarProperty Name="CatName" ColumnName="CatName" />
@@ -439,7 +730,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Discounts">
-            <EntityTypeMapping TypeName="ModelTra_Luoi.Discount">
+            <EntityTypeMapping TypeName="Models.Discount">
               <MappingFragment StoreEntitySet="Discount">
                 <ScalarProperty Name="DiscountID" ColumnName="DiscountID" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
@@ -453,7 +744,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="ModelTra_Luoi.Order">
+            <EntityTypeMapping TypeName="Models.Order">
               <MappingFragment StoreEntitySet="Order">
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="OrderCode" ColumnName="OrderCode" />
@@ -474,7 +765,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrderDetails">
-            <EntityTypeMapping TypeName="ModelTra_Luoi.OrderDetail">
+            <EntityTypeMapping TypeName="Models.OrderDetail">
               <MappingFragment StoreEntitySet="OrderDetail">
                 <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
@@ -489,7 +780,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrderDetail_Topping">
-            <EntityTypeMapping TypeName="ModelTra_Luoi.OrderDetail_Topping">
+            <EntityTypeMapping TypeName="Models.OrderDetail_Topping">
               <MappingFragment StoreEntitySet="OrderDetail_Topping">
                 <ScalarProperty Name="OrderDetail_ToppingID" ColumnName="OrderDetail_ToppingID" />
                 <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
@@ -499,7 +790,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="ModelTra_Luoi.Product">
+            <EntityTypeMapping TypeName="Models.Product">
               <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
@@ -512,24 +803,85 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="ModelTra_Luoi.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Toppings">
-            <EntityTypeMapping TypeName="ModelTra_Luoi.Topping">
+            <EntityTypeMapping TypeName="Models.Topping">
               <MappingFragment StoreEntitySet="Topping">
                 <ScalarProperty Name="ToppingID" ColumnName="ToppingID" />
                 <ScalarProperty Name="ToppingName" ColumnName="ToppingName" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Applications">
+            <EntityTypeMapping TypeName="Models.Application">
+              <MappingFragment StoreEntitySet="Applications">
+                <ScalarProperty Name="Applied_At" ColumnName="Applied_At" />
+                <ScalarProperty Name="Hr_Note" ColumnName="Hr_Note" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Preferred_Store_ID" ColumnName="Preferred_Store_ID" />
+                <ScalarProperty Name="Candidates_ID" ColumnName="Candidates_ID" />
+                <ScalarProperty Name="Job_ID" ColumnName="Job_ID" />
+                <ScalarProperty Name="Application_ID" ColumnName="Application_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Candidates">
+            <EntityTypeMapping TypeName="Models.Candidate">
+              <MappingFragment StoreEntitySet="Candidates">
+                <ScalarProperty Name="Created_at" ColumnName="Created_at" />
+                <ScalarProperty Name="Preferred_Shifts" ColumnName="Preferred_Shifts" />
+                <ScalarProperty Name="Cv_File_Url" ColumnName="Cv_File_Url" />
+                <ScalarProperty Name="Date_Of_Birth" ColumnName="Date_Of_Birth" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+                <ScalarProperty Name="Candidates_ID" ColumnName="Candidates_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Job_Stores">
+            <EntityTypeMapping TypeName="Models.Job_Stores">
+              <MappingFragment StoreEntitySet="Job_Stores">
+                <ScalarProperty Name="Headcount" ColumnName="Headcount" />
+                <ScalarProperty Name="Store_ID" ColumnName="Store_ID" />
+                <ScalarProperty Name="Job_ID" ColumnName="Job_ID" />
+                <ScalarProperty Name="Job_Store_ID" ColumnName="Job_Store_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jobs">
+            <EntityTypeMapping TypeName="Models.Job">
+              <MappingFragment StoreEntitySet="Jobs">
+                <ScalarProperty Name="Created_At" ColumnName="Created_At" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Benefits" ColumnName="Benefits" />
+                <ScalarProperty Name="Requirements" ColumnName="Requirements" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Salary_Unit" ColumnName="Salary_Unit" />
+                <ScalarProperty Name="Salary_max" ColumnName="Salary_max" />
+                <ScalarProperty Name="Salary_min" ColumnName="Salary_min" />
+                <ScalarProperty Name="Employment_Type" ColumnName="Employment_Type" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Job_id" ColumnName="Job_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="Models.Store">
+              <MappingFragment StoreEntitySet="Store">
+                <ScalarProperty Name="Store_Images_Url" ColumnName="Store_Images_Url" />
+                <ScalarProperty Name="Closed_Hours" ColumnName="Closed_Hours" />
+                <ScalarProperty Name="Opening_Hours" ColumnName="Opening_Hours" />
+                <ScalarProperty Name="Hotline" ColumnName="Hotline" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Location_Type" ColumnName="Location_Type" />
+                <ScalarProperty Name="Store_Name" ColumnName="Store_Name" />
+                <ScalarProperty Name="Store_Code" ColumnName="Store_Code" />
+                <ScalarProperty Name="Store_ID" ColumnName="Store_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
