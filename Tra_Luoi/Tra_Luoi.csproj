@@ -204,6 +204,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -288,6 +289,13 @@
     <Content Include="Views\News\Details.cshtml" />
     <Content Include="Views\Index\Employees.cshtml" />
     <Content Include="Views\Employees\Employees.cshtml" />
+    <Content Include="Views\Menu\Caphe.cshtml" />
+    <Content Include="Views\Menu\epdau.cshtml" />
+    <Content Include="Views\Menu\epdautam.cshtml" />
+    <Content Include="Views\Menu\sinhtobo.cshtml" />
+    <Content Include="Views\Menu\trasua.cshtml" />
+    <Content Include="Views\Menu\travaivixa.cshtml" />
+    <Content Include="Views\Index\Disan.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -297,7 +305,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

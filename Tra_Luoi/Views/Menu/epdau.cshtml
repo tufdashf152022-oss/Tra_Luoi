@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "epdau";
+    Layout = "~/Views/Shared/Tra_Luoi.cshtml";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="@Url.Content("~/css/products.css")"/>
+    }
+<main>
+    <main>
+
+        <div class="product-container">
+
+            <div class="product-image">
+                <img src="../img/z7955591111677_84af0906edbf06acf757e004783758a8.jpg" alt="strawberry">
+            </div>
+
+            <div class="product-info">
+
+                <h1>Strawberry Juice</h1>
+
+                <h2>35.000 VNĐ</h2>
+
+                <p class="description">
+                    Nước ép Dâu được làm từ dâu tây tươi nguyên chất, mang hương vị chua ngọt tự nhiên.
+                    Thức uống giúp giải khát và bổ sung vitamin C.
+                </p>
+
+                <h3>Kích cỡ</h3>
+
+                <div class="size">
+                    <button>S</button>
+                    <button class="active">M</button>
+                    <button>L</button>
+                </div>
+
+                <h3>Số lượng</h3>
+
+                <input type="number" value="1" min="1">
+
+                <br><br>
+
+                <button class="buy-btn btn-add">
+                    Thêm vào giỏ hàng
+                </button>
+                <button class="order-btn">Mua ngay</button>
+
+            </div>
+        </div>
+        <div class="detail">
+
+
+            <h2>Thông tin sản phẩm</h2>
+
+            <p>
+                Được ép trực tiếp từ dâu tây tươi, không sử dụng phẩm màu.
+            </p>
+
+            <p>
+                Hương vị thanh mát, thích hợp dùng lạnh trong những ngày nắng nóng.
+            </p>
+
+        </div>
+
+    </main>
+
+</main>

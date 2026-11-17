@@ -6,7 +6,7 @@
 @section Styles {
     <link rel="stylesheet" href="@Url.Content("~/css/faq.css")" />
 }
-<h2>FAQ</h2>
+
 
 <main class="faq-page">
 
@@ -35,9 +35,10 @@
 
         <div class="faq-search">
 
-            <input type="text"
+            @*<input type="text"
                    id="searchFAQ"
-                   placeholder="Bạn cần tìm thông tin gì?">
+                   placeholder="Bạn cần tìm thông tin gì?">*@
+            @Html.TextBox("text", null, new {id="searchFAQ",placeholder="Bạn Cần Tìm Thông Tin Gì?"})
 
             <button type="button">
                 <i class="bi bi-search"></i>

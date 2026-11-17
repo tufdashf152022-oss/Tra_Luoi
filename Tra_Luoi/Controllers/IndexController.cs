@@ -17,6 +17,10 @@ namespace Tra_Luoi.Controllers
         {
             return View();
         }
+        public ActionResult Disan()
+        {
+            return View();
+        }
         public ActionResult Menu()
         {
             return View();
