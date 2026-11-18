@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,11 @@ namespace Tra_Luoi.Controllers
 {
     public class EmployeesController : Controller
     {
+        //GET: Employees
         public ActionResult Employees(int id)
         {
-            List<Employees> dsTuyenDung = new List<Employees>()
+            Tra_LuoiDBContext dBContext = new Tra_LuoiDBContext();
+            List<Employees> Listjobs = dBContext.Jobs.Include(cat => cat.Category).Where(pro => pro.CatID == categoryId).ToList();
             {
                 new Employees
                 {
