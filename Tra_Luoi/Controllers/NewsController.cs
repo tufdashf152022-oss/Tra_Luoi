@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,11 @@ namespace Tra_Luoi.Controllers
 {
     public class NewsController : Controller
     {
+        //GET: New
         public ActionResult Details(int id)
         {
-            List<News> dsTin = new List<News>()
+            Tra_LuoiDBContext dBContext = new Tra_LuoiDBContext();
+            List<News> dsTin = new List<News>
             {
                 new News
                 {
