@@ -31,7 +31,6 @@ namespace Tra_Luoi.Models
         public string Hotline { get; set; }
         public Nullable<System.TimeSpan> Opening_Hours { get; set; }
         public Nullable<System.TimeSpan> Closed_Hours { get; set; }
-        public string Store_Images_Url { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Application> Applications { get; set; }

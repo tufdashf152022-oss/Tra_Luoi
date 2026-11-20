@@ -18,6 +18,11 @@ namespace Tra_Luoi.Models
         public Nullable<int> Job_ID { get; set; }
         public int Store_ID { get; set; }
         public int Headcount { get; set; }
+        public string Title { get; set; }
+        public string Category { get; set; }
+        public string Employment_Type { get; set; }
+        public Nullable<System.DateTime> Created_At { get; set; }
+        public Nullable<System.DateTime> Application_Deadline { get; set; }
     
         public virtual Job Job { get; set; }
         public virtual Store Store { get; set; }

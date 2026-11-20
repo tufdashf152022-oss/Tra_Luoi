@@ -1,4 +1,4 @@
-﻿
+﻿@model Tra_Luoi.Models.Product
 @{
     ViewBag.Title = "epdau";
     Layout = "~/Views/Shared/Tra_Luoi.cshtml";
@@ -8,23 +8,23 @@
     <link rel="stylesheet" href="@Url.Content("~/css/products.css")"/>
     }
 <main>
-    <main>
+    @if (Model != null)
+    {
 
         <div class="product-container">
 
             <div class="product-image">
-                <img src="../img/z7955591111677_84af0906edbf06acf757e004783758a8.jpg" alt="strawberry">
+                <img src="@Url.Content("~/" + Model.ProductImage)" alt="@Model.ProductName">
             </div>
 
             <div class="product-info">
 
-                <h1>Strawberry Juice</h1>
+                <h1 id="product-name">@Model.ProductName</h1>
 
-                <h2>35.000 VNĐ</h2>
+                <h2 id="product-price">@string.Format("{0:N0} VNĐ", Model.ProductPrice)</h2>
 
                 <p class="description">
-                    Nước ép Dâu được làm từ dâu tây tươi nguyên chất, mang hương vị chua ngọt tự nhiên.
-                    Thức uống giúp giải khát và bổ sung vitamin C.
+                    @Model.Description
                 </p>
 
                 <h3>Kích cỡ</h3>
@@ -53,16 +53,15 @@
 
             <h2>Thông tin sản phẩm</h2>
 
-            <p>
-                Được ép trực tiếp từ dâu tây tươi, không sử dụng phẩm màu.
-            </p>
+            <p style="white-space: pre-line;">@Model.Description</p>
 
-            <p>
-                Hương vị thanh mát, thích hợp dùng lạnh trong những ngày nắng nóng.
-            </p>
 
         </div>
 
-    </main>
 
+    }
+    else
+    {
+        <p style="padding: 20px; color: red;">Không tìm thấy sản phẩm.</p>
+    }
 </main>

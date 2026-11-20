@@ -249,21 +249,42 @@ main {
 /* =========================
    JOB BOTTOM
 ========================= */
-
 .job-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    gap: 20px;
 }
 
-.job-bottom p {
-    font-size: 12px;
-}
+    .job-bottom p {
+        margin: 0;
+    }
 
-.job-bottom strong {
+.apply-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 118px;
+    height: 40px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 8px;
+    background: #8D6E63;
+    color: white;
+    font-size: 13px;
     font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .apply-btn:hover {
+        background: #5B3A29;
+    }
+a.apply-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    line-height: normal;
 }
 
 

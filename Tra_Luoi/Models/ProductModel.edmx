@@ -58,6 +58,11 @@
           <Property Name="Job_ID" Type="int" />
           <Property Name="Store_ID" Type="int" Nullable="false" />
           <Property Name="Headcount" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="255" />
+          <Property Name="Category" Type="nvarchar" MaxLength="255" />
+          <Property Name="Employment_Type" Type="varchar" MaxLength="70" />
+          <Property Name="Created_At" Type="datetime" />
+          <Property Name="Application_Deadline" Type="date" />
         </EntityType>
         <EntityType Name="Jobs">
           <Key>
@@ -146,7 +151,6 @@
           <Property Name="Hotline" Type="nvarchar" MaxLength="70" />
           <Property Name="Opening_Hours" Type="time" Precision="0" />
           <Property Name="Closed_Hours" Type="time" Precision="0" />
-          <Property Name="Store_Images_Url" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="Topping">
           <Key>
@@ -617,6 +621,11 @@
           <Property Name="Headcount" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Job" Relationship="Models.FK__Job_Store__Job_I__76969D2E" FromRole="Job_Stores" ToRole="Job" />
           <NavigationProperty Name="Store" Relationship="Models.FK__Job_Store__Store__75A278F5" FromRole="Job_Stores" ToRole="Store" />
+          <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Employment_Type" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Created_At" Type="DateTime" Precision="3" />
+          <Property Name="Application_Deadline" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Job">
           <Key>
@@ -651,7 +660,6 @@
           <Property Name="Hotline" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
           <Property Name="Opening_Hours" Type="Time" Precision="0" />
           <Property Name="Closed_Hours" Type="Time" Precision="0" />
-          <Property Name="Store_Images_Url" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Applications" Relationship="Models.FK__Applicati__Prefe__7F2BE32F" FromRole="Store" ToRole="Application" />
           <NavigationProperty Name="Job_Stores" Relationship="Models.FK__Job_Store__Store__75A278F5" FromRole="Store" ToRole="Job_Stores" />
         </EntityType>
@@ -843,6 +851,11 @@
           <EntitySetMapping Name="Job_Stores">
             <EntityTypeMapping TypeName="Models.Job_Stores">
               <MappingFragment StoreEntitySet="Job_Stores">
+                <ScalarProperty Name="Application_Deadline" ColumnName="Application_Deadline" />
+                <ScalarProperty Name="Created_At" ColumnName="Created_At" />
+                <ScalarProperty Name="Employment_Type" ColumnName="Employment_Type" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Headcount" ColumnName="Headcount" />
                 <ScalarProperty Name="Store_ID" ColumnName="Store_ID" />
                 <ScalarProperty Name="Job_ID" ColumnName="Job_ID" />
@@ -871,7 +884,6 @@
           <EntitySetMapping Name="Stores">
             <EntityTypeMapping TypeName="Models.Store">
               <MappingFragment StoreEntitySet="Store">
-                <ScalarProperty Name="Store_Images_Url" ColumnName="Store_Images_Url" />
                 <ScalarProperty Name="Closed_Hours" ColumnName="Closed_Hours" />
                 <ScalarProperty Name="Opening_Hours" ColumnName="Opening_Hours" />
                 <ScalarProperty Name="Hotline" ColumnName="Hotline" />
